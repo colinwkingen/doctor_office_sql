@@ -37,15 +37,9 @@ describe(Doctor) do
     end
   end
 
-  describe("#specialty") do
-    it "returns a specialty of the doc" do
-      doctor1 = Doctor.new({:name => 'Steve', :specialty => 'Brain Surgeon'})
-      expect(doctor1.specialty()).to(eq('Brain Surgeon'))
-    end
-  end
 
   describe("#patients") do
-    it "returns an empty list of patientsin the beginning" do
+    it "returns an empty list of patients in the beginning" do
       doctor1 = Doctor.new({:name => 'Steve', :specialty => 'Brain Surgeon'})
       expect(doctor1.patients()).to(eq([]))
     end
