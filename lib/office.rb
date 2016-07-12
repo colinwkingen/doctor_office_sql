@@ -7,12 +7,20 @@ class Doctor
     @id = @@doctors.length + 1
     @patients = []
   end
+
+
+
   define_method(:info) do
     info = {:name => @name, :specialty => @specialty, :id => @id, :patients => @patients}
   end
-  
+
   define_singleton_method(:all) do
     @@doctors
+  end
+
+  define_method(:save) do
+    @@doctors.push(self)
+
   end
 
 end
