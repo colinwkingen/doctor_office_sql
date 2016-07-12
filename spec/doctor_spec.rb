@@ -1,8 +1,3 @@
-require('rspec')
-require "office"
-require "patient"
-require "pg"
-require "pry"
 require "spec_helper"
 
 describe(Doctor) do

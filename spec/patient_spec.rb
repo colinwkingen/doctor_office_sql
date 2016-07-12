@@ -1,9 +1,4 @@
-require('rspec')
-require "office"
-require "pg"
-require "pry"
 require "spec_helper"
-require "patient"
 
 describe(Patient) do
   before() do
