@@ -34,4 +34,9 @@ class Doctor
     found_doc
   end
 
+  # define_method(:add_patient)
+  #
+  # end
+
+
 end

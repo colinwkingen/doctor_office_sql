@@ -1,5 +1,6 @@
 require('rspec')
 require "office"
+require "patient"
 require "pg"
 require "pry"
 require "spec_helper"
@@ -75,7 +76,6 @@ describe(Doctor) do
       doctor2 = Doctor.new({:name => 'Kim', :specialty => 'Oncologist'})
       doctor2.save()
       expect(Doctor.find(doctor1.id())).to(eq(doctor1))
-
     end
   end
 
