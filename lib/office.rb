@@ -1,15 +1,15 @@
 class Doctor
-  attr_reader(:name, :specialty, :id, :patients)
+  attr_reader(:name, :specialty, :specialty_id, :patients)
   @@doctors = []
   define_method(:initialize) do |attributes|
     @name = attributes[:name]
     @specialty = attributes[:specialty]
-    @id = @@doctors.length + 1
+    @specialty_id = @@doctors.length + 1
     @patients = []
   end
 
   define_method(:info) do
-    info = {:name => @name, :specialty => @specialty, :id => @id, :patients => @patients}
+    info = {:name => @name, :specialty => @specialty, :specialty_id => @specialty_id, :patients => @patients}
   end
 
   define_singleton_method(:all) do
@@ -24,10 +24,10 @@ class Doctor
     @@doctors = []
   end
 
-  define_singleton_method(:find) do |id|
+  define_singleton_method(:find) do |specialty_id|
     found_doc = nil
     @@doctors.each() do |doctor|
-      if doctor.id().eql?(id)
+      if doctor.specialty_id().eql?(specialty_id)
         found_doc = doctor
       end
     end

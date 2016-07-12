@@ -19,7 +19,7 @@ describe(Doctor) do
   describe("#info") do
     it "returns info about an individual doctor" do
       doctor1 = Doctor.new({:name => 'Steve', :specialty => 'Brain Surgeon'})
-      expect(doctor1.info()).to(eq({:name => 'Steve', :specialty => 'Brain Surgeon', :id => 1, :patients => []}))
+      expect(doctor1.info()).to(eq({:name => 'Steve', :specialty => 'Brain Surgeon', :specialty_id => 1, :patients => []}))
     end
   end
 
@@ -69,7 +69,7 @@ describe(Doctor) do
       doctor1.save()
       doctor2 = Doctor.new({:name => 'Kim', :specialty => 'Oncologist'})
       doctor2.save()
-      expect(Doctor.find(doctor1.id())).to(eq(doctor1))
+      expect(Doctor.find(doctor1.specialty_id())).to(eq(doctor1))
     end
   end
 
