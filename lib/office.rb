@@ -24,4 +24,14 @@ class Doctor
     @@doctors = []
   end
 
+  define_singleton_method(:find) do |id|
+    found_doc = nil
+    @@doctors.each() do |doctor|
+      if doctor.id().eql?(id)
+        found_doc = doctor
+      end
+    end
+    found_doc
+  end
+
 end

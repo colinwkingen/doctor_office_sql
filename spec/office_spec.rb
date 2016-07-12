@@ -5,6 +5,10 @@ require "pry"
 require "spec_helper"
 
 describe(Doctor) do
+  before() do
+    Doctor.clear()
+  end
+
   describe(".all") do
     it "will be empty at the beginning" do
       expect(Doctor.all()).to(eq([]))
@@ -64,6 +68,17 @@ describe(Doctor) do
     end
   end
 
-  
+  describe(".find") do
+    it "finds a doc by id" do
+      doctor1 = Doctor.new({:name => 'Steve', :specialty => 'Brain Surgeon'})
+      doctor1.save()
+      doctor2 = Doctor.new({:name => 'Kim', :specialty => 'Oncologist'})
+      doctor2.save()
+      expect(Doctor.find(doctor1.id())).to(eq(doctor1))
+
+    end
+  end
+
+
 
 end
