@@ -53,8 +53,17 @@ describe(Doctor) do
       doctor2 = Doctor.new({:name => 'Kim', :specialty => 'Oncologist'})
       doctor2.save()
       expect(Doctor.all()).to(eq([doctor1, doctor2]))
-
     end
   end
+
+  describe(".clear") do
+    it "empties out all saved doctors" do
+      Doctor.new({:name => 'Steve', :specialty => 'Brain Surgeon'})
+      Doctor.clear()
+      expect(Doctor.clear()).to(eq([]))
+    end
+  end
+
+  
 
 end
